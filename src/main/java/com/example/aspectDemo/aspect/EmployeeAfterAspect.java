@@ -17,15 +17,14 @@ public class EmployeeAfterAspect {
     }
 
 
-    @AfterThrowing("within(com.example.aspectDemo.model.Employee)")
-    public void logExceptions(JoinPoint joinPoint) {
-        System.out.println("Exception thrown in Employee Method: " + joinPoint.toString());
-    }
-
     @AfterReturning(pointcut = "execution(* getName())", returning = "returnString")
     public void getNameReturningAdvice(String returnString) {
         System.out.println("getNameReturningAdvice executed. Returned String: " + returnString);
     }
 
+    @AfterThrowing("within(com.example.aspectDemo.model.Employee)")
+    public void logExceptions(JoinPoint joinPoint) {
+        System.out.println("Exception thrown in Employee Method: " + joinPoint.toString());
+    }
 
 }
