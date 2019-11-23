@@ -1,6 +1,6 @@
 package com.example.aspectDemo;
 
-import com.example.aspectDemo.model.Employee;
+
 import com.example.aspectDemo.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -12,7 +12,7 @@ public class AspectDemoApplication implements CommandLineRunner {
 
     @Autowired
     EmployeeService employeeService;
-//	Employee employee;
+
 
     public static void main(String[] args) {
         SpringApplication.run(AspectDemoApplication.class, args);

@@ -11,13 +11,15 @@ import java.util.Arrays;
 @Aspect
 @Component
 public class EmployeeAspectPointcut {
-//    @Pointcut("execution(* setName(*))")
-//    public void EmployeeSetNamePointcut(){
-//    }
-//
-//    @After("EmployeeSetNamePointcut()")
-//    public void EmployeeSetNamePointcut(JoinPoint joinPoint){
-//        System.out.println("New name is " + Arrays.toString(joinPoint.getArgs()));
-//    }
+    @Pointcut("execution(* setName(*))")
+    public void PointcutEmployeeSetName() {
+    }
+
+    @After("PointcutEmployeeSetName()")
+    public void PointcutEmployeeSetName(JoinPoint joinPoint) {
+        System.out.println("------- POINTCUT TEST ------------");
+        System.out.println("New name is " + Arrays.toString(joinPoint.getArgs()));
+        System.out.println("----- POINTCUT TEST END -----------");
+    }
 
 }

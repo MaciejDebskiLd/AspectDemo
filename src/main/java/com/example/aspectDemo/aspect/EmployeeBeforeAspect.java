@@ -9,20 +9,20 @@ import java.lang.annotation.Annotation;
 
 @Component
 @Aspect
-public class EmployeeAspect {
+public class EmployeeBeforeAspect {
 
-@Before("execution(public String getName())")
-public void getNameAdvice(){
-    System.out.println("Executing Advice on getName()");
-}
+    @Before("execution(public String getName())")
+    public void getNameAdvice() {
+        System.out.println("Executing Advice on getName()");
+    }
 
-    @Before("execution(* com.example.demoAspect.service.*.get*())")
-    public void getAllAdvice(){
+    @Before("execution(* com.example.aspectDemo.service.*.get*())")
+    public void getAllAdvice() {
         System.out.println("Performing Before Aspect");
     }
 
 
-    }
+}
 
 
 
