@@ -27,7 +27,7 @@ public class AspectDemoApplication implements CommandLineRunner {
 
         System.out.println(employeeService.getEmployee().getName());
 
-        employeeService.getEmployee().throwException();
+//        employeeService.getEmployee().throwException();
 
 
     }
