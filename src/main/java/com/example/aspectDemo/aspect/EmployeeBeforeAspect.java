@@ -16,10 +16,7 @@ public class EmployeeBeforeAspect {
         System.out.println("Executing Advice on getName()");
     }
 
-    @Before("execution(* com.example.aspectDemo.service.*.get*())")
-    public void getAllAdvice() {
-        System.out.println("Performing Before Aspect");
-    }
+
 
 
 }
