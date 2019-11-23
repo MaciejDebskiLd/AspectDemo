@@ -11,19 +11,18 @@ import java.lang.annotation.Annotation;
 @Aspect
 public class EmployeeAspect {
 
+@Before("execution(public String getName())")
+public void getNameAdvice(){
+    System.out.println("Executing Advice on getName()");
+}
 
-//    @Before("execution(* com.example.aspectDemo.service.EmployeeService.*(..))")
-//    public void employeeBeforeAspect(){
-//        System.out.println("Performing Before Aspect");
-//
-//    }
-
-    @Before("execution(public String setName())")
-    public void employeeBeforeAspect() {
+    @Before("execution(* com.example.demoAspect.service.*.get*())")
+    public void getAllAdvice(){
         System.out.println("Performing Before Aspect");
+    }
+
 
     }
-}
 
 
 

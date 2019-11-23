@@ -9,15 +9,16 @@ public class Employee {
 
     private String name;
 
-    public Employee(@Value("Base name") String name){this.name = name;}
-
-    public Employee() {
+    public Employee(@Value("Base name") String name){
+        this.name = name;
     }
+
+
 
     public String getName() {
         return name;
     }
-@Loggable
+    @Loggable
     public void setName(String name) {
         this.name = name;
     }

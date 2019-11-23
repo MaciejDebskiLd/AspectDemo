@@ -10,43 +10,27 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class AspectDemoApplication implements CommandLineRunner {
 
-	@Autowired
-	EmployeeService employeeService;
-	Employee employee;
+    @Autowired
+    EmployeeService employeeService;
+//	Employee employee;
 
-	public static void main(String[] args) {
-		SpringApplication.run(AspectDemoApplication.class, args);
-	}
-
-
-	@Override
-	public void run(String... args) throws Exception {
-		System.out.println("------------- ASPECT TEST -----------------");
-		Employee employee = new Employee();
-		employee.setName("Bartek");
-
-//		employeeService.getEmployee().setName("Bartek");
+    public static void main(String[] args) {
+        SpringApplication.run(AspectDemoApplication.class, args);
+    }
 
 
+    @Override
+    public void run(String... args) throws Exception {
+        System.out.println("------------- ASPECT TEST -----------------");
+        System.out.println(employeeService.getEmployee().getName());
+        employeeService.getEmployee().setName("Bartek");
 
-		System.out.println(employee.getName());
+        System.out.println(employeeService.getEmployee().getName());
 
-
-		//System.out.println(employeeService.getEmployee().getName());
-
-
-
-
-
-
+        employeeService.getEmployee().throwException();
 
 
-
-
-
-	}
-
-
+    }
 
 
 }
