@@ -15,7 +15,7 @@ public class EmployeeAspectPointcut {
     public void pointcutEmployeeSetName() {
     }
 
-    @After("PointcutEmployeeSetName()")
+    @After("pointcutEmployeeSetName()")
     public void pointcutEmployeeSetName(JoinPoint joinPoint) {
         System.out.println("------- POINTCUT TEST ------------");
         System.out.println("New name is " + Arrays.toString(joinPoint.getArgs()));
